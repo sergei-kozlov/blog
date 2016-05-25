@@ -32,9 +32,9 @@ public class HomeController {
         return "article";
     }
 
-    @RequestMapping(value ="/registration", method = RequestMethod.GET)
+    @RequestMapping(value ="/savetodb", method = RequestMethod.GET)
     public String registration(){
-        return "registration";
+        return "savetodb";
     }
 }
 
