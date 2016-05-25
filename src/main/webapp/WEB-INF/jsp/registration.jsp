@@ -10,8 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="fragments/header.jsp"/>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <jsp:include page="fragments/header.jsp"/>
 
@@ -25,29 +24,36 @@
     <section>
         <article>
             <h1>Регистрация</h1>
-            <div class="text-article">
-                <form method="POST" action="registration">
+
+                <form:form method="POST" action="add" commandName="reguser">
+                    <div class="text-article">
+
+
+
+                        <fieldset class="boxBody">
                     <p>
-                        <label for="login">Логин</label>
-                        <input type="text" name="login" id="login"/>
+                        <form:label path="login">Login</form:label>
+                        <form:input path="login"/>
                     </p>
                     <p>
                         <label for="email">E-Mail</label>
-                        <input type="email" name="email" id="email"/>
+                        <form:input path="email"/>
                     </p>
                     <p>
                         <label for="password">Пароль</label>
-                        <input type="password" name="password" id="password"/>
-
-                        <label for="password2">Повторите пароль</label>
-                        <input type="password" name="password2" id="password2"/>
+                        <form:input path="password"/>
+                        <%--<label for="password2">Повторите пароль</label>--%>
+                        <%--<form:input path="password2"/>--%>
                     </p>
+                    </fieldset>
                     <p>
-                        <button type="submit">Зарегистрироваться</button>
+                        <form:button type="submit" value="add" name="action">Зарегистрироваться</form:button>
+                        <%--<button type="submit">Зарегистрироваться</button>--%>
                     </p>
-                </form>
-            </div>
+                    </div>
+                 </form:form>
         </article>
     </section>
 </div>
+
 <jsp:include page="fragments/footer.jsp"/>

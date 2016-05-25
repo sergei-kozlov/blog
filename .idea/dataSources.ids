@@ -15,7 +15,9 @@
       <table id="4" parent="1" name="groupuser"/>
       <table id="5" parent="1" name="groupuser_has_articles"/>
       <table id="6" parent="1" name="messages"/>
-      <table id="7" parent="1" name="users"/>
+      <table id="7" parent="1" name="users">
+        <comment>email пользователя</comment>
+      </table>
       <column id="8" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
@@ -206,7 +208,11 @@ articles_id</columns>
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <key id="48" parent="7" name="PRIMARY">
+      <column id="48" parent="7" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="49" parent="7" name="PRIMARY">
         <columns>login</columns>
         <primary>1</primary>
       </key>

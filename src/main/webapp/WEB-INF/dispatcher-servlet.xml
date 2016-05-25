@@ -17,8 +17,6 @@
     <!--Show Spring Where Is Resources For JSP-->
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
-    <!--<mvc:view-controller path="/" view-name="index" />-->
-
     <!--@Transaction annotation support -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
@@ -29,10 +27,10 @@
 
     <!-- EntityManagerFactory -->
     <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource"/>
         <!--Поставщик данных - hibernate-->
         <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
         <!--поиск сущностей в этом пакете-->
         <property name="packagesToScan"
@@ -53,10 +51,10 @@
 
     <!-- Datasource. Источник данных - база MySQL -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/blog" />
-        <property name="username" value="root" />
-        <property name="password" value="root" />
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/blog"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
     </bean>
 
 

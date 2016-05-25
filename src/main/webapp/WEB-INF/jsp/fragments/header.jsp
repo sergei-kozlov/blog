@@ -13,7 +13,8 @@
 <header>
     <a href="/"><img alt="Логотип" id="top-image" src="/resources/images/main_logo.jpg"/></a>
     <div id="user-panel">
-        <a href="#"><img alt="Иконка юзера" scr=""/></a>
-        <a href="javascript:void(0);">[Панель для юзера]</a>
+
+        <a href="registration${registration}">Регистрация</a>
+
     </div>
 </header>
