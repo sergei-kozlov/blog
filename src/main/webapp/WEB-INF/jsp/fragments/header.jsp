@@ -14,7 +14,7 @@
     <a href="/"><img alt="Логотип" id="top-image" src="/resources/images/main_logo.jpg"/></a>
     <div id="user-panel">
 
-        <a href="/savetodb">Регистрация</a>
+        <a href="/registration">Регистрация</a>
 
     </div>
 </header>

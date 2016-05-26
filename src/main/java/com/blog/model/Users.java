@@ -1,9 +1,9 @@
 package com.blog.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.*;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
 
 /**
@@ -12,14 +12,17 @@ import javax.validation.constraints.Size;
 @Entity
 public class Users {
 
-    @Size(min = 6, max = 30, message = "Минимальное значение логина 6 символов")
-    private String login;
-    @Size(min = 8, max = 30, message = "Минимальное значение пароля 8 символов")
-    private String pass;
-    private String email;
 
     @Id
-    @Column(name = "login", nullable = false, length = 15)
+    @Column(name = "login")
+    private String login;
+
+    @Column(name = "pass")
+    private String pass;
+
+    @Column(name = "email")
+    private String email;
+
     public String getLogin() {
         return login;
     }
@@ -28,8 +31,7 @@ public class Users {
         this.login = login;
     }
 
-    @Basic
-    @Column(name = "pass", nullable = false, length = 45)
+
     public String getPass() {
         return pass;
     }
@@ -38,8 +40,6 @@ public class Users {
         this.pass = pass;
     }
 
-    @Basic
-    @Column(name = "email", nullable = false, length = 45)
     public String getEmail() {
         return email;
     }

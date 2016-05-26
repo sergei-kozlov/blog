@@ -117,6 +117,13 @@
             <version>1.9.13</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jasper-el</artifactId>
+            <version>8.5.2</version>
+            <scope>provided</scope>
+        </dependency>
+
 
     </dependencies>
 

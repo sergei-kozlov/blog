@@ -1,8 +1,10 @@
 package com.blog.services.impl;
 
 import com.blog.model.Articles;
+import com.blog.model.Simple;
 import com.blog.model.Users;
 import com.blog.repository.ArticleRepository;
+import com.blog.repository.SimpleRepository;
 import com.blog.repository.UserRepository;
 import com.blog.services.BlogService;
 import com.google.common.collect.Lists;
@@ -23,17 +25,20 @@ import java.util.List;
 @Transactional
 public class BlogServiceImpl implements BlogService{
 
+
     private ArticleRepository articleRepository;
     private UserRepository userRepository;
+    private SimpleRepository simpleRepository;
+
 
     @Autowired
-    public BlogServiceImpl(ArticleRepository articleRepository, UserRepository userRepository) {
+    public BlogServiceImpl(ArticleRepository articleRepository, SimpleRepository simpleRepository, UserRepository userRepository) {
         this.articleRepository = articleRepository;
+        this.simpleRepository = simpleRepository;
         this.userRepository = userRepository;
     }
 
-    public List<Articles> getAll() {
-      return Lists.newArrayList(articleRepository.findAll());
+    public List<Articles> getAll() {return Lists.newArrayList(articleRepository.findAll());
     }
 
     public List<Articles> findByTitle(String title) {
@@ -42,14 +47,13 @@ public class BlogServiceImpl implements BlogService{
 
     public List<Articles> getById(int id) { return articleRepository.getById(id);}
 
-    public void saveByLogin(Users users) throws DataAccessException {
-        userRepository.save(users);
+    public void insert(Users users) { userRepository.save(users);
     }
 
 
-    public Users findUserByLogin(String login) throws DataAccessException {
-        return userRepository.findOne(login);
-    }
+//    public Users save(Users users) {
+//        userRepository.save(users);
+//    }
 
 
 }

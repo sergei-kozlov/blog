@@ -1,18 +1,16 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Sergey
-  Date: 14.05.2016
-  Time: 11:02
-  To change this template use File | Settings | File Templates.
---%>
-
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="fragments/header.jsp"/>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<jsp:include page="fragments/header.jsp"/>
+<head>
+    <link href="<c:url value='/resources/css/style.css'/>" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Страница регистрации</title>
+</head>
+<body>
+
 
 <div id="main">
     <aside class="leftAside">
@@ -25,12 +23,8 @@
         <article>
             <h1>Регистрация</h1>
 
-                <form:form method="POST" action="add" commandName="reguser">
-                    <div class="text-article">
-
-
-
-                        <fieldset class="boxBody">
+            <form:form method="POST" commandName="users" action="/registration/add">
+                <div class="text-article">
                     <p>
                         <form:label path="login">Login</form:label>
                         <form:input path="login"/>
@@ -40,18 +34,15 @@
                         <form:input path="email"/>
                     </p>
                     <p>
-                        <label for="password">Пароль</label>
-                        <form:input path="password"/>
-                        <%--<label for="password2">Повторите пароль</label>--%>
-                        <%--<form:input path="password2"/>--%>
+                        <label for="pass">Пароль</label>
+                        <form:input path="pass"/>
                     </p>
-                    </fieldset>
                     <p>
-                        <form:button type="submit" value="add" name="action">Зарегистрироваться</form:button>
-                        <%--<button type="submit">Зарегистрироваться</button>--%>
+                        <form:button type="submit" name="action">Зарегистрироваться</form:button>
+                            <%--<button type="submit">Зарегистрироваться</button>--%>
                     </p>
-                    </div>
-                 </form:form>
+                </div>
+            </form:form>
         </article>
     </section>
 </div>
