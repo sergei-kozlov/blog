@@ -28,18 +28,21 @@
                     <p>
                         <form:label path="login">Login</form:label>
                         <form:input path="login"/>
+                        <form:errors path="login" cssClass="error"/>
                     </p>
                     <p>
                         <label for="email">E-Mail</label>
                         <form:input path="email"/>
+                        <form:errors path="email" cssClass="error"/>
                     </p>
                     <p>
                         <label for="pass">Пароль</label>
-                        <form:input path="pass"/>
+                        <form:input path="pass" cssClass="error"/>
+                        <form:errors path="pass" cssClass="error"/>
                     </p>
                     <p>
                         <form:button type="submit" name="action">Зарегистрироваться</form:button>
-                            <%--<button type="submit">Зарегистрироваться</button>--%>
+                            .
                     </p>
                 </div>
             </form:form>

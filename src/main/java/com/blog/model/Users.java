@@ -1,5 +1,6 @@
 package com.blog.model;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -15,12 +16,15 @@ public class Users {
 
     @Id
     @Column(name = "login")
+    @Size(min = 6, max = 15, message = "Логин должен содержать не менее 6 символов и не более 15")
     private String login;
 
     @Column(name = "pass")
+    @Size(min = 8, message = "Пароль должен содержать не менее 8 символов")
     private String pass;
 
     @Column(name = "email")
+    @Email(message = "Введенный email не корректен")
     private String email;
 
     public String getLogin() {
