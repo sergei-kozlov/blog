@@ -13,6 +13,10 @@
 <header>
     <a href="/"><img alt="Логотип" id="top-image" src="/resources/images/main_logo.jpg"/></a>
     <div id="user-panel">
+        <%--<span style="float: right"> --%>
+				<a href="?lang=en">en</a>
+				<a href="?lang=ru">ru</a>
+        <%--</span>--%>
 
         <a href="/registration">Регистрация</a>
 

@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page="fragments/header.jsp"/>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
@@ -11,11 +10,10 @@
     <title>Страница подвердения регистрации</title>
 </head>
 <body>
+
 <header>
     <a href="/"><img alt="Логотип" id="top-image" src="/resources/images/main_logo.jpg"/></a>
-    <div id="user-panel">
-
-    </div>
+</header>
 
 
 <div id="main">

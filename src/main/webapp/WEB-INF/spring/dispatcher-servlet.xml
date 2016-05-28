@@ -34,7 +34,7 @@
         </property>
         <!--поиск сущностей в этом пакете-->
         <property name="packagesToScan"
-                  value="com.blog"/>
+                  value="com.blog.model"/>
         <!--детали конфигурации поставщика постоянства (hibernate) -->
         <property name="jpaProperties">
             <props>
@@ -72,5 +72,33 @@
     <!-- Need for Repository abstraction -->
     <jpa:repositories base-package="com.blog.repository" entity-manager-factory-ref="emf"
                       transaction-manager-ref="transactionManager"/>
+
+
+    <!--Scanning components for i18n and l10n-->
+
+    <bean id="messageSource"
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/locales/messages" />
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+    <!--Need for switching localization-->
+
+    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="lang" />
+    </bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="en" />
+    </bean>
+
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang"/>
+
+        </bean>
+    </mvc:interceptors>
+
+
 </beans>
 
