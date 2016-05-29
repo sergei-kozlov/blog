@@ -16,15 +16,15 @@ public class Users {
 
     @Id
     @Column(name = "login")
-    @Size(min = 6, max = 15, message = "Логин должен содержать не менее 6 символов и не более 15")
+    @Size(min = 6, message = "{name.size.error}")
     private String login;
 
     @Column(name = "pass")
-    @Size(min = 8, message = "Пароль должен содержать не менее 8 символов")
+    @Size(min = 5, max = 10, message = "{password.size.error}")
     private String pass;
 
     @Column(name = "email")
-    @Email(message = "Введенный email не корректен")
+    @Email(message = "{email.error}")
     private String email;
 
     public String getLogin() {

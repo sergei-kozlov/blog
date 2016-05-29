@@ -20,6 +20,9 @@
     <!--@Transaction annotation support -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
+    <!--Scanning components in base-package (look for annotations) -->
+    <context:component-scan base-package="com.blog"/>
+
     <!--Обеспечивает работу с транзакциями в Spring -->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="emf"/>
@@ -58,10 +61,7 @@
     </bean>
 
 
-    <context:annotation-config/>
 
-    <!--Scanning components in base-package (look for annotations) -->
-    <context:component-scan base-package="com.blog"/>
 
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -89,16 +89,14 @@
     </bean>
 
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-        <property name="defaultLocale" value="en" />
+        <property name="defaultLocale" value="ru" />
     </bean>
 
     <mvc:interceptors>
         <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
             <property name="paramName" value="lang"/>
-
         </bean>
     </mvc:interceptors>
-
 
 </beans>
 

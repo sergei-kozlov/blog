@@ -30,6 +30,8 @@ public class RegistrationController {
         Users users = new Users();
         model.put("users", users);
 
+        logger.info(users.getLogin());
+
         return "registration";
     }
 
