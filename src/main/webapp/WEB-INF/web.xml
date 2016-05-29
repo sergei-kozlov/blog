@@ -4,22 +4,16 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <display-name>Blog</display-name>
-    
+
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/spring/applicationContext.xml</param-value>
     </context-param>
 
-    <!--For Using Spring Data JPA-->
-    <!--<context-param>-->
-        <!--<param-name>spring.profiles.active</param-name>-->
-        <!--<param-value>spring-data-jpa</param-value>-->
-    <!--</context-param>-->
-    
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    
+
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -38,7 +32,7 @@
     </servlet-mapping>
 
     <!--The ability to enter any characters -->
-    
+
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

@@ -5,9 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- * Created by Sergey on 18.05.2016.
- */
 @Entity
 @Table(name = "groupuser", schema = "blog")
 public class Groupuser {

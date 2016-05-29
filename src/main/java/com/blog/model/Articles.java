@@ -3,9 +3,6 @@ package com.blog.model;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-/**
- * Created by Sergey on 18.05.2016.
- */
 @Entity
 @Table(name = "articles", schema = "blog")
 public class Articles {

@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -8,12 +10,8 @@
 <header>
     <a href="/"><img alt="Логотип" id="top-image" src="/resources/images/main_logo.jpg"/></a>
     <div id="user-panel">
-        <%--<span style="float: right"> --%>
-				<a href="?lang=en">en</a>
-				<a href="?lang=ru">ru</a>
-        <%--</span>--%>
 
-        <a href="/registration">Регистрация</a>
+        <a href="/registration"><spring:message code="registration.h1"/> </a>
 
     </div>
 </header>

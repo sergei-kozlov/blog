@@ -2,9 +2,6 @@ package com.blog.model;
 
 import javax.persistence.*;
 
-/**
- * Created by Sergey on 23.05.2016.
- */
 @Entity
 @Table(name = "contacts", schema = "blog")
 public class Contacts {

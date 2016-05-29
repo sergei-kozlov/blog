@@ -7,9 +7,6 @@ import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
 
-/**
- * Created by Sergey on 25.05.2016.
- */
 @Entity
 public class Users {
 
@@ -25,6 +22,7 @@ public class Users {
 
     @Column(name = "email")
     @Email(message = "{email.error}")
+    @NotEmpty(message = "{email.empty}")
     private String email;
 
     public String getLogin() {
