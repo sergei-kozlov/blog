@@ -1,15 +1,20 @@
 package com.blog.model;
 
-import javax.persistence.*;
-import java.sql.Timestamp;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.sql.Date;
 
+/**
+ * Created by Sergey on 01.06.2016.
+ */
 @Entity
-@Table(name = "articles", schema = "blog")
 public class Articles {
     private int id;
     private String title;
     private String text;
-    private Timestamp date;
+    private Date date;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -43,11 +48,11 @@ public class Articles {
 
     @Basic
     @Column(name = "date", nullable = false)
-    public Timestamp getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

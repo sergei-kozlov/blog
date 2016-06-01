@@ -1,9 +1,9 @@
 package com.blog.services.impl;
 
-import com.blog.model.Articles;
-import com.blog.model.Users;
+import com.blog.model.щдв.Articles;
+import com.blog.model.щдв.Users;
 import com.blog.repository.ArticleRepository;
-import com.blog.repository.UserRepository;
+import com.blog.repository.UsersRepository;
 import com.blog.services.BlogService;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +21,13 @@ public class BlogServiceImpl implements BlogService {
 
 
     private ArticleRepository articleRepository;
-    private UserRepository userRepository;
+    private UsersRepository usersRepository;
 
 
     @Autowired
-    public BlogServiceImpl(ArticleRepository articleRepository, UserRepository userRepository) {
+    public BlogServiceImpl(ArticleRepository articleRepository, UsersRepository userRepository) {
         this.articleRepository = articleRepository;
-        this.userRepository = userRepository;
+        this.usersRepository = usersRepository;
     }
 
     public List<Articles> getAll() {
@@ -43,7 +43,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     public void insert(Users users) {
-        userRepository.save(users);
+        usersRepository.save(users);
     }
 
 

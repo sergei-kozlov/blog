@@ -1,7 +1,7 @@
 package com.blog.services;
 
-import com.blog.model.Articles;
-import com.blog.model.Users;
+import com.blog.model.щдв.Articles;
+import com.blog.model.щдв.Users;
 import org.springframework.dao.DataAccessException;
 
 import java.util.List;

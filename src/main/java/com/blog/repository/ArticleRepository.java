@@ -1,6 +1,6 @@
 package com.blog.repository;
 
-import com.blog.model.Articles;
+import com.blog.model.щдв.Articles;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

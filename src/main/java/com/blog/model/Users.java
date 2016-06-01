@@ -1,53 +1,47 @@
 package com.blog.model;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-import javax.persistence.*;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Size;
-
+/**
+ * Created by Sergey on 01.06.2016.
+ */
 @Entity
 public class Users {
-
+    private String username;
+    private String password;
+    private byte enabled;
 
     @Id
-    @Column(name = "login")
-    @Size(min = 6, message = "{name.size.error}")
-    private String login;
-
-    @Column(name = "pass")
-    @Size(min = 5, max = 10, message = "{password.size.error}")
-    private String pass;
-
-    @Column(name = "email")
-    @Email(message = "{email.error}")
-    @NotEmpty(message = "{email.empty}")
-    private String email;
-
-    public String getLogin() {
-        return login;
+    @Column(name = "username", nullable = false, length = 45)
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-
-    public String getPass() {
-        return pass;
+    @Basic
+    @Column(name = "password", nullable = false, length = 45)
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    @Basic
+    @Column(name = "enabled", nullable = false)
+    public byte getEnabled() {
+        return enabled;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEnabled(byte enabled) {
+        this.enabled = enabled;
     }
 
     @Override
@@ -57,18 +51,18 @@ public class Users {
 
         Users users = (Users) o;
 
-        if (login != null ? !login.equals(users.login) : users.login != null) return false;
-        if (pass != null ? !pass.equals(users.pass) : users.pass != null) return false;
-        if (email != null ? !email.equals(users.email) : users.email != null) return false;
+        if (enabled != users.enabled) return false;
+        if (username != null ? !username.equals(users.username) : users.username != null) return false;
+        if (password != null ? !password.equals(users.password) : users.password != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = login != null ? login.hashCode() : 0;
-        result = 31 * result + (pass != null ? pass.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
+        int result = username != null ? username.hashCode() : 0;
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (int) enabled;
         return result;
     }
 }
