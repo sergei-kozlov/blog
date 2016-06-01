@@ -20,7 +20,9 @@
 
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/spring/dispatcher-servlet.xml</param-value>
+            <param-value>/WEB-INF/spring/dispatcher-servlet.xml
+                        /WEB-INF/spring/applicationSecurity.xml
+            </param-value>
         </init-param>
 
         <load-on-startup>1</load-on-startup>
@@ -49,4 +51,29 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!-- Need to enable xml config Spring Security -->
+    
+    <!--<filter>-->
+        <!--<filter-name>springSecurityFilterChain</filter-name>-->
+        <!--<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
+    <!--</filter>-->
+
+    <!--<filter-mapping>-->
+        <!--<filter-name>springSecurityFilterChain</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
+
+
+    <!--&lt;!&ndash; page on load&ndash;&gt;-->
+    <!--<welcome-file-list>-->
+        <!--<welcome-file>redirectPage.jsp</welcome-file>-->
+    <!--</welcome-file-list>-->
+    <!--&lt;!&ndash; error page &ndash;&gt;-->
+    <!--<error-page>-->
+        <!--<error-code>403</error-code>-->
+        <!--<location>/accessDenied.jsp</location>-->
+    <!--</error-page>-->
+
+
 </web-app>
