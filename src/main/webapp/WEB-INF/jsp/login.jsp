@@ -1,40 +1,56 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sprinf" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<html>
 <head>
+    <link href="<c:url value='/resources/css/style.css'/>" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Title Login Page</title>
+    <title><spring:message code="registration.title"/></title>
 </head>
 <body>
-<h1>Login page</h1>
-<p>Valid users:
-<p>username: <b>user</b>, password: <b>user</b></p>
-<p>username: <b>admin</b>, password: <b>adminp</b></p>
-<p>username: <b>guest</b>, password: <b>guest</b></p>
 
-<c:if test="${not empty param.login_error}">
-  <span style="color: red; ">
+<header>
+    <a href="/"><img alt="Логотип" id="top-image" src="/resources/images/main_logo.jpg"/></a>
+</header>
+
+<div id="main">
+    <aside class="leftAside">
+        <h2><spring:message code="registration.head"/></h2>
+        <p><spring:message code="registration.how"/></p>
+    </aside>
+    <section>
+        <article>
+            <h1><spring:message code="registration.h1"/></h1>
+            <c:if test="${not empty param.login_error}">
+                <span style="color: red; ">
     Your login attempt was not successful, try again.<br/><br/>
     Reason: <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}"/>
-  </span>
-</c:if>
+                </span>
+            </c:if>
 
-<form name="frm" action="<c:url value='login'/>" method="post">
-    <table>
-        <tr> <td>User:</td> <td><input type="text" name="username"></td></tr>
+            <form name="frm" action="<c:url value='login'/>" method="post">
+                <div class="text-article">
 
-        <tr><td>Password:</td> <td><input type="password" name="password"></td></tr>
+                    User:<input type="text" name="username"><br><br>
 
-        <tr><td colspan="2"><input name="submit" type="submit"></td></tr>
-        <tr><td colspan="2"><input name="reset" type="reset"></td></tr>
-    </table>
+                    Password:<input type="password" name="password">
 
-    <input type="hidden" name="<c:out value="${_csrf.parameterName}"/>"
-           value="<c:out value="${_csrf.token}"/>"/>
-</form>
+                    <p colspan="2"><input name="submit" type="submit"></p>
+                    <p colspan="2"><input name="reset" type="reset"></p>
 
-</body>
 
-</html>
+                    <input type="hidden" name="<c:out value="${_csrf.parameterName}"/>"
+                           value="<c:out value="${_csrf.token}"/>"/>
+                </div>
 
+            </form>
+
+
+        </article>
+    </section>
+</div>
+
+<jsp:include page="fragments/footer.jsp"/>
