@@ -1,7 +1,7 @@
 package com.blog.services.impl;
 
-import com.blog.model.щдв.Articles;
-import com.blog.model.щдв.Users;
+import com.blog.model.Articles;
+import com.blog.model.Users;
 import com.blog.repository.ArticleRepository;
 import com.blog.repository.UsersRepository;
 import com.blog.services.BlogService;

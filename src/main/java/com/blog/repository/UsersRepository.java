@@ -1,6 +1,6 @@
 package com.blog.repository;
 
-import com.blog.model.щдв.Users;
+import com.blog.model.Users;
 import org.springframework.data.repository.CrudRepository;
 
 /**
