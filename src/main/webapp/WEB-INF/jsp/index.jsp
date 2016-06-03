@@ -21,6 +21,7 @@
         <a href="?lang=en">En</a>
 
         <a href="/registration"><spring:message code="index.registration"/> </a>
+        <a href="/login">Авторизация</a>
 
     </div>
 </header>

@@ -28,19 +28,14 @@
             <form:form method="POST" commandName="users" action="/registration/add">
                 <div class="text-article">
                     <p>
-                        <form:label path="login">Login</form:label>
-                        <form:input path="login"/>
-                        <form:errors path="login" cssClass="error"/>
+                        <form:label path="username">Login</form:label>
+                        <form:input path="username"/>
+                        <form:errors path="username" cssClass="error"/>
                     </p>
                     <p>
-                        <label for="email">E-Mail</label>
-                        <form:input path="email"/>
-                        <form:errors path="email" cssClass="error"/>
-                    </p>
-                    <p>
-                        <label for="pass">Password</label>
-                        <form:input path="pass" cssClass="error"/>
-                        <form:errors path="pass" cssClass="error"/>
+                        <label for="password">Password</label>
+                        <form:input path="password" cssClass="error"/>
+                        <form:errors path="password" cssClass="error"/>
                     </p>
                     <p>
                         <form:button type="submit" name="action"><spring:message code="registration.reg"/>
