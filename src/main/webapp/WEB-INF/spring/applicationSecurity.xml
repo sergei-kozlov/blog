@@ -22,7 +22,7 @@
                     authentication-failure-url="/login?error=true"/>
         <http-basic/>
         <logout logout-success-url="/exitUser.jsp"/>
-        <!--<remember-me />-->
+        <remember-me key=""/>
         <headers/>
         <csrf/>
     </http>

@@ -16,5 +16,6 @@ public interface BlogService {
     List<Articles> getById(int id) throws DataAccessException;
 
     void insert(Users users) throws DataAccessException;
+    void addArticle(Articles articles) throws DataAccessException;
 
 }

@@ -34,9 +34,11 @@
                     </p>
                     <p>
                         <label for="password">Password</label>
-                        <form:input path="password" cssClass="error"/>
+                        <form:input path="password"/>
                         <form:errors path="password" cssClass="error"/>
                     </p>
+
+
                     <p>
                         <form:button type="submit" name="action"><spring:message code="registration.reg"/>
                         </form:button>

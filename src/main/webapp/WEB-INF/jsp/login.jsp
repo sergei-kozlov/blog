@@ -2,7 +2,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="sprinf" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <head>
@@ -11,6 +10,7 @@
     <title><spring:message code="registration.title"/></title>
 </head>
 <body>
+
 
 <header>
     <a href="/"><img alt="Логотип" id="top-image" src="/resources/images/main_logo.jpg"/></a>
@@ -37,6 +37,7 @@
                     User:<input type="text" name="username"><br><br>
 
                     Password:<input type="password" name="password">
+                    Remember me <input type="checkbox" name="remember-me-parameter">
 
                     <p colspan="2"><input name="submit" type="submit"></p>
                     <p colspan="2"><input name="reset" type="reset"></p>
