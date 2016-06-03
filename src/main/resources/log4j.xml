@@ -9,10 +9,15 @@
 			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
 		</layout>
 	</appender>
+
+
+
+
+
 	
 	<!-- Application Loggers -->
-	<logger name="com.common">
-		<level value="info" />
+	<logger name="com.blog">
+		<level value="TRACE" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
@@ -30,6 +35,10 @@
 
 	<logger name="org.springframework.web">
 		<level value="info" />
+	</logger>
+
+	<logger name="org.springframework.security.web">
+		<level value="TRACE"/>
 	</logger>
 
 	<!-- Root Logger -->

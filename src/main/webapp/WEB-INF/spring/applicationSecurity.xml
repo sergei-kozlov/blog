@@ -9,18 +9,20 @@
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <http realm="JavaStudy example" use-expressions="false">
-        <intercept-url pattern="/" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/login.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/article.jsp" access="ROLE_ADMIN"/>
-        <intercept-url pattern="/exitUser.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/" access="ROLE_USER"/>
+    <!--<http realm="JavaStudy example" use-expressions="true">-->
+    <http auto-config='true'>
+        <!--<intercept-url pattern="/" access="IS_AUTHENTICATED_ANONYMOUSLY"/>-->
+        <!--<intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY"/>-->
+        <!--<intercept-url pattern="/article" access="ROLE_ADMIN"/>-->
+        <!--<intercept-url pattern="/exitUser" access="IS_AUTHENTICATED_ANONYMOUSLY"/>-->
+        <!--<intercept-url pattern="/" access="ROLE_USER"/>-->
+        <intercept-url pattern="/article" access="isAuthenticated()"/>
 
         <form-login login-page="/login"
-                    authentication-failure-url="/login.jsp?login_error=1"/>
+                    authentication-failure-url="/login?error=true"/>
         <http-basic/>
-        <logout logout-success-url="/WEB-INF/jsp/exitUser.jsp"/>
-        <remember-me />
+        <logout logout-success-url="/exitUser.jsp"/>
+        <!--<remember-me />-->
         <headers/>
         <csrf/>
     </http>
