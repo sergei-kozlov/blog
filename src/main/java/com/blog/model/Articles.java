@@ -3,6 +3,7 @@ package com.blog.model;
 import org.hibernate.annotations.Tables;
 import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.joda.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.orm.jpa.vendor.Database;
 

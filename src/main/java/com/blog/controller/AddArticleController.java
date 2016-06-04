@@ -2,6 +2,7 @@ package com.blog.controller;
 
 import com.blog.model.Articles;
 import com.blog.services.BlogService;
+import org.joda.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,6 @@ import javax.validation.Valid;
 import java.sql.Date;
 import java.util.Map;
 
-/**
- * Created by Sergey on 03.06.2016.
- */
 @Controller
 public class AddArticleController {
 
@@ -38,9 +36,11 @@ public class AddArticleController {
     @RequestMapping(value = "/article/add", method = RequestMethod.POST)
     public String processCreationUser(@Valid Articles articles, BindingResult result) {
 
+        LocalDate localDate = new LocalDate();
 
+        Date date = Date.valueOf(String.valueOf(localDate));
 
-
+        articles.setDate(date);
 
 
 
