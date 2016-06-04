@@ -1,18 +1,12 @@
 package com.blog.model;
 
-import org.hibernate.annotations.Tables;
 import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.joda.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.orm.jpa.vendor.Database;
 
 import javax.persistence.*;
 import java.sql.Date;
 
-/**
- * Created by Sergey on 01.06.2016.
- */
 @Entity
 @Table(name = "articles")
 public class Articles {

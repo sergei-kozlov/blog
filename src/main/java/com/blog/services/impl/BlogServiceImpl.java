@@ -27,10 +27,6 @@ public class BlogServiceImpl implements BlogService {
     private UsersRepository usersRepository;
 
 
-
-
-
-
     @Override
     public List<Articles> getAll() {
 

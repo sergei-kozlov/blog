@@ -2,9 +2,6 @@ package com.blog.model;
 
 import javax.persistence.*;
 
-/**
- * Created by Sergey on 01.06.2016.
- */
 @Entity
 @Table(name = "authorities")
 public class Authorities {

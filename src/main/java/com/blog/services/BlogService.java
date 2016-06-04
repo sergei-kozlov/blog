@@ -20,6 +20,4 @@ public interface BlogService {
 
     void saveArticle(Articles articles) throws DataAccessException;
 
-
-
 }
