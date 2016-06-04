@@ -9,10 +9,14 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "users")
 public class Users {
+
     @Size(min = 5, message = "minimum 5 symbols")
     private String username;
+
     @Size(min = 5, message = "minimum 5 symbols")
     private String password;
+
+    private boolean enabled;
 
     @Id
     @Column(name = "username", nullable = false, length = 45)
@@ -34,6 +38,16 @@ public class Users {
         this.password = password;
     }
 
+    @Basic
+    @Column(name = "enabled", nullable = false)
+    public boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -41,16 +55,18 @@ public class Users {
 
         Users users = (Users) o;
 
+        if (enabled != users.enabled) return false;
         if (username != null ? !username.equals(users.username) : users.username != null) return false;
         if (password != null ? !password.equals(users.password) : users.password != null) return false;
 
         return true;
     }
 
-    @Override
-    public int hashCode() {
-        int result = username != null ? username.hashCode() : 0;
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        return result;
-    }
+//    @Override
+//    public int hashCode() {
+//        int result = username != null ? username.hashCode() : 0;
+//        result = 31 * result + (password != null ? password.hashCode() : 0);
+//        result = 31 * result + () enabled;
+//        return result;
+//    }
 }

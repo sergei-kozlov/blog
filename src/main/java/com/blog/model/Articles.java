@@ -1,6 +1,10 @@
 package com.blog.model;
 
 import org.hibernate.annotations.Tables;
+import org.hibernate.annotations.Type;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.orm.jpa.vendor.Database;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -12,8 +16,14 @@ import java.sql.Date;
 @Table(name = "articles")
 public class Articles {
     private int id;
+    @NotEmpty
     private String title;
+
+    @NotEmpty
     private String text;
+
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date date;
 
     @Id
@@ -79,4 +89,6 @@ public class Articles {
         result = 31 * result + (date != null ? date.hashCode() : 0);
         return result;
     }
+
+
 }

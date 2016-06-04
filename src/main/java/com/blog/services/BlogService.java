@@ -18,6 +18,8 @@ public interface BlogService {
 
     void saveUser(Users users) throws DataAccessException;
 
+    void saveArticle(Articles articles) throws DataAccessException;
+
 
 
 }

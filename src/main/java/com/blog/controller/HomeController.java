@@ -29,7 +29,7 @@ public class HomeController {
         this.blogService = blogService;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
     public String homePage(Model model, HttpSession session, Locale locale) {
         model.addAttribute("articles", blogService.getAll());
         return "index";

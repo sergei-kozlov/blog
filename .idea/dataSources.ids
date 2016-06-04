@@ -25,7 +25,6 @@
         <data-type>text</data-type>
       </column>
       <column id="8" parent="2" name="date">
-        <mandatory>1</mandatory>
         <data-type>date</data-type>
       </column>
       <key id="9" parent="2" name="PRIMARY">
@@ -75,7 +74,11 @@
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <key id="20" parent="4" name="PRIMARY">
+      <column id="20" parent="4" name="enabled">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <key id="21" parent="4" name="PRIMARY">
         <columns>username</columns>
         <primary>1</primary>
       </key>

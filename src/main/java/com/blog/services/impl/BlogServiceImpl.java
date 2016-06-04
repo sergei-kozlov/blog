@@ -20,15 +20,15 @@ import java.util.List;
 @Transactional
 public class BlogServiceImpl implements BlogService {
 
+
+    @Autowired
     private ArticleRepository articleRepository;
+    @Autowired
     private UsersRepository usersRepository;
 
 
-    @Autowired
-    public BlogServiceImpl(ArticleRepository articleRepository, UsersRepository usersRepository) {
-        this.articleRepository = articleRepository;
-        this.usersRepository = usersRepository;
-    }
+
+
 
 
     @Override
@@ -54,6 +54,11 @@ public class BlogServiceImpl implements BlogService {
 
         this.usersRepository.save(users);
 
+    }
+
+    @Override
+    public void saveArticle(Articles articles) throws DataAccessException {
+        this.articleRepository.save(articles);
     }
 
 }

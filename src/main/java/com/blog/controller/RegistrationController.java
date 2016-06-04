@@ -21,10 +21,6 @@ public class RegistrationController {
     @Autowired
     private BlogService blogService;
 
-//    @Autowired
-//    public RegistrationController(BlogService blogService) {
-//        this.blogService = blogService;
-//    }
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String initCreationUser(Map<String, Object> model) {
@@ -42,6 +38,8 @@ public class RegistrationController {
 
         logger.info(users.getUsername());
         logger.info(users.getPassword());
+        users.setEnabled(true);
+
 
 
         if (result.hasErrors()) {
