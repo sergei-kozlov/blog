@@ -27,7 +27,7 @@
             <form:form method="POST" commandName="simple" action="/registration/add">
                 <div class="text-article">
                     <p>
-                        Добро пожаловать ${users.login}
+                        Добро пожаловать ${users.username}
                     </p>
 
                 </div>

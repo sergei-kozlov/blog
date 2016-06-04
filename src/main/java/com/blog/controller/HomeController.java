@@ -20,13 +20,12 @@ public class HomeController {
 
     private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-    @Autowired
-    private MessageSource messageSource;
 
     public BlogService blogService;
 
     @Autowired
     public HomeController(BlogService blogService) {
+
         this.blogService = blogService;
     }
 

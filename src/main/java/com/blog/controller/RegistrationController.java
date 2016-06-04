@@ -18,16 +18,18 @@ public class RegistrationController {
 
     private static final Logger logger = LoggerFactory.getLogger(RegistrationController.class);
 
+    @Autowired
     private BlogService blogService;
 
-    @Autowired
-    public RegistrationController(BlogService blogService) {
-        this.blogService = blogService;
-    }
+//    @Autowired
+//    public RegistrationController(BlogService blogService) {
+//        this.blogService = blogService;
+//    }
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String initCreationUser(Map<String, Object> model) {
         Users users = new Users();
+
         model.put("users", users);
 
         logger.info(users.getUsername());
@@ -38,11 +40,14 @@ public class RegistrationController {
     @RequestMapping(value = "/registration/add", method = RequestMethod.POST)
     public String processCreationUser(@Valid Users users, BindingResult result) {
 
+        logger.info(users.getUsername());
+        logger.info(users.getPassword());
+
 
         if (result.hasErrors()) {
             return "registration";
         } else {
-            this.blogService.insert(users);
+            blogService.saveUser(users);
             return "checkuser";
         }
     }

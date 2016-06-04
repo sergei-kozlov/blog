@@ -33,10 +33,11 @@
                         <form:errors path="username" cssClass="error"/>
                     </p>
                     <p>
-                        <label for="password">Password</label>
+                        <form:label path="password">Password</form:label>
                         <form:input path="password"/>
                         <form:errors path="password" cssClass="error"/>
                     </p>
+
 
 
                     <p>

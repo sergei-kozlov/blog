@@ -20,7 +20,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="" />
         <datasource-mapping>
-          <factory-entry name="NewPersistenceUnit" value="6c713889-cbfa-4ffd-89c7-1058466ebf62" />
+          <factory-entry name="NewPersistenceUnit" value="88e1635e-76f7-4b27-8349-c4523ee3053c" />
           <factory-entry name="emf" value="562a8755-f2b3-42e3-b68f-3580cac7ce23" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/java/META-INF/persistence.xml" />

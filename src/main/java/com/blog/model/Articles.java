@@ -1,15 +1,15 @@
 package com.blog.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.hibernate.annotations.Tables;
+
+import javax.persistence.*;
 import java.sql.Date;
 
 /**
  * Created by Sergey on 01.06.2016.
  */
 @Entity
+@Table(name = "articles")
 public class Articles {
     private int id;
     private String title;

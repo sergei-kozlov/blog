@@ -75,11 +75,7 @@
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="20" parent="4" name="enabled">
-        <mandatory>1</mandatory>
-        <data-type>tinyint(1)</data-type>
-      </column>
-      <key id="21" parent="4" name="PRIMARY">
+      <key id="20" parent="4" name="PRIMARY">
         <columns>username</columns>
         <primary>1</primary>
       </key>

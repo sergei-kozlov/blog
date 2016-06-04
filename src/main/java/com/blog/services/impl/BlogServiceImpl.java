@@ -20,41 +20,40 @@ import java.util.List;
 @Transactional
 public class BlogServiceImpl implements BlogService {
 
-
     private ArticleRepository articleRepository;
     private UsersRepository usersRepository;
 
 
     @Autowired
-    public BlogServiceImpl(ArticleRepository articleRepository, UsersRepository userRepository) {
+    public BlogServiceImpl(ArticleRepository articleRepository, UsersRepository usersRepository) {
         this.articleRepository = articleRepository;
         this.usersRepository = usersRepository;
     }
 
-    public List<Articles> getAll()
-    {
+
+    @Override
+    public List<Articles> getAll() {
+
         return Lists.newArrayList(articleRepository.findAll());
     }
 
-    public List<Articles> findByTitle(String title)
-    {
+    @Override
+    public List<Articles> findByTitle(String title) {
+
         return articleRepository.findByTitle(title);
     }
 
+    @Override
     public List<Articles> getById(int id) {
 
         return articleRepository.getById(id);
     }
 
-    public void insert(Users users) {
-        usersRepository.save(users);
-    }
+    @Override
+    public void saveUser(Users users) throws DataAccessException {
 
-
-    public void addArticle(Articles articles)  {
-        articleRepository.save(articles);
+        this.usersRepository.save(users);
 
     }
-
 
 }

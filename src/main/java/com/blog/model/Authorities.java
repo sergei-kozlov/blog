@@ -1,14 +1,12 @@
 package com.blog.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Sergey on 01.06.2016.
  */
 @Entity
+@Table(name = "authorities")
 public class Authorities {
     private String username;
     private String authority;
