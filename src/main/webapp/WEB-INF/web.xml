@@ -10,16 +10,15 @@
         <param-value>
             /WEB-INF/spring/applicationContext.xml
             /WEB-INF/spring/applicationSecurity.xml
-
         </param-value>
     </context-param>
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    <listener>
-        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
-    </listener>
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>-->
+    <!--</listener>-->
 
     <servlet>
         <servlet-name>dispatcher</servlet-name>

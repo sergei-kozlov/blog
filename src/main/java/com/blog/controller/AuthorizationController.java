@@ -15,7 +15,7 @@ public class AuthorizationController {
 
         ModelAndView model = new ModelAndView();
         if (error != null) {
-            model.addObject("error", "Invalid username or password!");
+            model.addObject("error", "Sorry! Invalid username or password!");
         }
 
         model.setViewName("login");
