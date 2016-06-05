@@ -45,10 +45,10 @@ public class AddArticleController {
         articles.setDate(date);
 
         if (result.hasErrors()) {
-            return "index";
+            return "addarticle";
         } else {
             blogService.saveArticle(articles);
-            return "article";
+            return "redirect";
         }
     }
 }

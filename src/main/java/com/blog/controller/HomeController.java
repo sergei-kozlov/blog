@@ -20,7 +20,7 @@ public class HomeController {
     private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 
-    public BlogService blogService;
+    private BlogService blogService;
 
     @Autowired
     public HomeController(BlogService blogService) {
@@ -34,11 +34,7 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping(value = "/article")
-    public String articlePage(@RequestParam("id") int id, Model model) {
-        model.addAttribute("text", blogService.getById(id));
-        return "article";
-    }
+
 
 }
 
