@@ -42,8 +42,6 @@ public class RegistrationController {
         logger.info(users.getPassword());
         users.setEnabled(true);
 
-
-
         if (result.hasErrors()) {
             return "registration";
         } else {

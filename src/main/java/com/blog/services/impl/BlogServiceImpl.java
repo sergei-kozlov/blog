@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
 @Service
 @Repository
 @Transactional
@@ -30,76 +29,43 @@ public class BlogServiceImpl implements BlogService {
         this.usersRepository = usersRepository;
     }
 
-
-//    public List<Articles> getAllArticles(){
-//        return articleRepository.getAllArticles();
-//    }
-
-//    @Override
-//    public List<Articles> getAllArticles() {
-//
-//        return Lists.newArrayList(articleRepository.findAll());
-//    }
-//
-//
-//    @Override
-//    public List<Articles> getById(int id) {
-//
-//        return articleRepository.getById(id);
-//    }
-//
-//
-//    public void saveArticle(Articles articles) throws DataAccessException {
-//        this.articleRepository.save(articles);
-//    }
-//
-//
-//
-//
-//
-//    @Override
-//    public List<Users> getAllUsers() throws DataAccessException {
-//        return null;
-//    }
-//
-//    @Override
-//    public void saveUser(Users users) throws DataAccessException {
-//        this.usersRepository.save(users);
-//    }
-//
-//    @Override
-//    public void removeUser(Users users) throws DataAccessException {
-//
-//    }
-
     @Override
-    public List<Articles> getAll() {
+    public List<Articles> getAllArticles() {
 
         return Lists.newArrayList(articleRepository.findAll());
     }
 
     @Override
-    public List<Articles> findByTitle(String title) {
-
-        return articleRepository.findByTitle(title);
-    }
-
-    @Override
     public List<Articles> getById(int id) {
-
         return articleRepository.getById(id);
-    }
-
-    @Override
-    public void saveUser(Users users) throws DataAccessException {
-
-        this.usersRepository.save(users);
-
     }
 
     @Override
     public void saveArticle(Articles articles) throws DataAccessException {
         this.articleRepository.save(articles);
+
     }
 
+    @Override
+    public void removeArticle(Integer id) throws DataAccessException {
+        this.articleRepository.delete(id);
+
+    }
+
+    @Override
+    public List<Users> getAllUsers() throws DataAccessException {
+        return Lists.newArrayList(usersRepository.findAll());
+    }
+
+    @Override
+    public void saveUser(Users users) throws DataAccessException {
+        this.usersRepository.save(users);
+
+    }
+
+    @Override
+    public void removeUser(String username) throws DataAccessException {
+        this.usersRepository.delete(username);
+
+    }
 }

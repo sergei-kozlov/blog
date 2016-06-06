@@ -3,9 +3,7 @@ package com.blog.model;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
-/**
- * Created by Sergey on 06.06.2016.
- */
+
 @Entity
 @Table(name = "users")
 public class Users {

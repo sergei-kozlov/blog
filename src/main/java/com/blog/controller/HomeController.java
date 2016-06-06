@@ -9,10 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpSession;
-import java.util.Locale;
 import java.util.Map;
 
 
@@ -31,23 +28,10 @@ public class HomeController {
 
 
     @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
-    public String homePage(Model model, HttpSession session, Locale locale) {
-        model.addAttribute("articles", blogService.getAll());
+    public String homePage(Model model) {
+        model.addAttribute("articlesList", blogService.getAllArticles());
         return "index";
-
-
     }
-//    @RequestMapping(value = "/", method = RequestMethod.GET)
-//    public String listContacts(Map<String, Object> map) {
-//
-//        map.put("articles", new Articles());
-//        map.put("articleList", blogService.getAllArticles());
-//
-//        return "index";
-//    }
-
-
-
 }
 
 

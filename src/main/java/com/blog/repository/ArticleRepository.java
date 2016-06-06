@@ -9,11 +9,5 @@ import java.util.List;
 
 public interface ArticleRepository extends CrudRepository<Articles, Integer> {
 
-
-    List<Articles> findByTitle(String title);
-
     List<Articles> getById(int id);
-
-
-
 }

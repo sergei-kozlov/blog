@@ -22,7 +22,10 @@
         <a href="?lang=ru">Ru</a>
         <a href="?lang=en">En</a>
 
-        <a href="/registration"><spring:message code="index.registration"/> </a>
+        <a href="/adminpage">Зона Аднимистрирования</a>
+
+        <%--<a href="/registration"><spring:message code="index.registration"/> </a>--%>
+
         <a href="/login">Авторизация</a>
 
     </div>
@@ -34,7 +37,7 @@
         <h2><spring:message code="index.head"/></h2>
 
 
-        <c:forEach var="articles" items="${articles}" begin="0" end="5">
+        <c:forEach var="articles" items="${articlesList}" begin="0" end="5">
             <ul>
                 <li>
                     <a href="article?id=${articles.id}">${articles.title}</a>
@@ -44,7 +47,7 @@
         </c:forEach>
     </aside>
     <section>
-        <c:forEach var="article" items="${articles}" begin="0" end="15">
+        <c:forEach var="article" items="${articlesList}" begin="0" end="15">
             <article>
                 <h1>${article.title}</h1>
 
