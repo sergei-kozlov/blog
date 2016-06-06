@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
-import java.util.Map;
 
 @Controller
 public class AdminController {
@@ -23,7 +22,6 @@ public class AdminController {
         this.blogService = blogService;
     }
 
-
     @RequestMapping(value = "/adminpage", method = RequestMethod.GET)
     public String homePage(Model model, Users users) {
 
@@ -31,19 +29,10 @@ public class AdminController {
         model.addAttribute("articleList", blogService.getAllArticles());
 
         return "adminpage";
-
-    }
-
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public String deleteArticle(@PathVariable("id") Integer id) {
-
-        blogService.removeArticle(id);
-
-        return "redirect:/adminpage";
     }
 
 
-    @RequestMapping(value = "/delete/{username}",method = RequestMethod.GET)
+    @RequestMapping(value = "/del/{username}", method = {RequestMethod.GET, RequestMethod.POST})
     public String deleteUser(@PathVariable("username") String username) {
         blogService.removeUser(username);
 
@@ -61,6 +50,14 @@ public class AdminController {
             blogService.saveUser(users);
             return "redirect:/adminpage";
         }
+    }
+
+    @RequestMapping(value = "/delete/{id}", method = {RequestMethod.GET, RequestMethod.POST})
+    public String deleteArticle(@PathVariable("id") Integer id ) {
+
+        blogService.removeArticle(id);
+
+        return "redirect:/adminpage";
     }
 }
 

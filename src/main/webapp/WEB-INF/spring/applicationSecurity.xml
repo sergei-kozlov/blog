@@ -8,9 +8,20 @@
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
     <beans:import resource="datasource-config.xml"/>
 
+    <http auto-config="true">
 
-    <http auto-config="true" use-expressions="true">
-        <intercept-url pattern="/article" access="isAuthenticated()" />
+        <access-denied-handler error-page="/WEB-INF/jsp/accessDenied.jsp"/>
+
+        <intercept-url pattern="/article" access="isAuthenticated()"/>
+        <intercept-url pattern="/adminpage" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/index" access="isAuthenticated()"/>
+        <intercept-url pattern="/addarticle" access="isAuthenticated()"/>
+
+
+        <!--<intercept-url pattern="/article" access="ROLE_USER, ROLE_ADMIN" />-->
+        <!--<intercept-url pattern="/adminpage" access="ROLE_ADMIN" />-->
+
+
         <form-login login-page='/login' authentication-failure-url="/login?error=true"
                     username-parameter="user_login"
                     password-parameter="password_login" />
