@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="sprinf" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <head>
@@ -28,6 +28,7 @@
             <form:form method="POST" commandName="users" action="/registration/add">
                 <div class="text-article">
                     <p>
+
                         <form:label path="username">Login</form:label>
                         <form:input path="username"/>
                         <form:errors path="username" cssClass="error"/>

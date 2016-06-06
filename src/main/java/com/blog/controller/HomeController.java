@@ -1,5 +1,6 @@
 package com.blog.controller;
 
+import com.blog.model.Articles;
 import com.blog.services.BlogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.Locale;
+import java.util.Map;
 
 
 @Controller
@@ -24,15 +26,25 @@ public class HomeController {
 
     @Autowired
     public HomeController(BlogService blogService) {
-
         this.blogService = blogService;
     }
+
 
     @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
     public String homePage(Model model, HttpSession session, Locale locale) {
         model.addAttribute("articles", blogService.getAll());
         return "index";
+
+
     }
+//    @RequestMapping(value = "/", method = RequestMethod.GET)
+//    public String listContacts(Map<String, Object> map) {
+//
+//        map.put("articles", new Articles());
+//        map.put("articleList", blogService.getAllArticles());
+//
+//        return "index";
+//    }
 
 
 

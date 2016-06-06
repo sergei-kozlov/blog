@@ -44,12 +44,16 @@
                     </c:if>
                 </fieldset>
 
+                <label>Remember me</label><input type="checkbox" name="remember-me-parameter">
 
-                <%--<input name="key" type="checkbox" class="checkAdmin" />--%>
+
+
+
+                <%--<input type="checkbox" class="checkAdmin" />--%>
 
                 <%--<label for="remember_me">Запомнить</label>--%>
 
-                <input type="submit" value="Авторизироваться">
+                <input type="submit" value="Sign In">
 
             </form>
 

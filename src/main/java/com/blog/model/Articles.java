@@ -11,6 +11,7 @@ import java.sql.Date;
 @Table(name = "articles")
 public class Articles {
     private int id;
+
     @NotEmpty
     private String title;
 

@@ -48,7 +48,10 @@ public class AddArticleController {
             return "addarticle";
         } else {
             blogService.saveArticle(articles);
-            return "redirect";
+
+//            jsp можно удалить
+//            return "redirectPage";
+            return "redirect:/index";
         }
     }
 }

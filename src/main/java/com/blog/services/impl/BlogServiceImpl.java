@@ -21,11 +21,56 @@ import java.util.List;
 public class BlogServiceImpl implements BlogService {
 
 
-    @Autowired
     private ArticleRepository articleRepository;
-    @Autowired
     private UsersRepository usersRepository;
 
+    @Autowired
+    public BlogServiceImpl(ArticleRepository articleRepository, UsersRepository usersRepository) {
+        this.articleRepository = articleRepository;
+        this.usersRepository = usersRepository;
+    }
+
+
+//    public List<Articles> getAllArticles(){
+//        return articleRepository.getAllArticles();
+//    }
+
+//    @Override
+//    public List<Articles> getAllArticles() {
+//
+//        return Lists.newArrayList(articleRepository.findAll());
+//    }
+//
+//
+//    @Override
+//    public List<Articles> getById(int id) {
+//
+//        return articleRepository.getById(id);
+//    }
+//
+//
+//    public void saveArticle(Articles articles) throws DataAccessException {
+//        this.articleRepository.save(articles);
+//    }
+//
+//
+//
+//
+//
+//    @Override
+//    public List<Users> getAllUsers() throws DataAccessException {
+//        return null;
+//    }
+//
+//    @Override
+//    public void saveUser(Users users) throws DataAccessException {
+//        this.usersRepository.save(users);
+//    }
+//
+//    @Override
+//    public void removeUser(Users users) throws DataAccessException {
+//
+//    }
 
     @Override
     public List<Articles> getAll() {

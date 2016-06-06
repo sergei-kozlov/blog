@@ -4,36 +4,31 @@
              xsi:schemaLocation="
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security.xsd
-
 	http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
     <beans:import resource="datasource-config.xml"/>
 
 
     <http auto-config="true" use-expressions="true">
-    <!--<http use-expressions="true">-->
-
         <intercept-url pattern="/article" access="isAuthenticated()" />
         <form-login login-page='/login' authentication-failure-url="/login?error=true"
                     username-parameter="user_login"
                     password-parameter="password_login" />
-
         <logout logout-success-url="/login" />
-        <remember-me remember-me-parameter="key" remember-me-cookie="SPING_SECURITY"/>
 
+        <!--For storage in cookie-->
+        <remember-me remember-me-parameter="remember-me-parameter" remember-me-cookie="SPRING_SECURITY_COOKIE"/>
+
+        <!--For storage in Data Base-->
+        <!--<remember-me data-source-ref="dataSource" remember-me-parameter="remember-me-parameter" />-->
     </http>
-
 
 
     <beans:bean id="jdbcGroupsImpl" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
         <beans:property name="enableGroups" value="true" />
         <beans:property name="enableAuthorities" value="false" />
         <beans:property name="dataSource" ref="dataSource"/>
-
     </beans:bean>
-
-
-
 
     <authentication-manager>
         <authentication-provider user-service-ref="jdbcGroupsImpl">
@@ -41,21 +36,13 @@
     </authentication-manager>
 
 
-    <!--<beans:bean id="tokenRepository"-->
-            <!--class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl">-->
-        <!--<beans:property name="dataSource" ref="dataSource"/>-->
-    <!--</beans:bean>-->
+
+    <beans:bean id="bcrypt" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+        <beans:constructor-arg name="strength" value="11" />
+    </beans:bean>
 
 
 
-    <!--<authentication-manager>-->
-        <!--<authentication-provider>-->
-            <!--<user-service>-->
-                <!--<user name="user" password="user" authorities="ROLE_USER, ROLE_ADMIN" />-->
-                <!--<user name="admin" password="admin" authorities="ROLE_ADMIN" />-->
-            <!--</user-service>-->
-        <!--</authentication-provider>-->
-    <!--</authentication-manager>-->
 
 
 

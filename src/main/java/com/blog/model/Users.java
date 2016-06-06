@@ -3,20 +3,21 @@ package com.blog.model;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+/**
+ * Created by Sergey on 06.06.2016.
+ */
 @Entity
 @Table(name = "users")
 public class Users {
-
-    @Size(min = 5, message = "minimum 5 symbols")
+    @Size(min=6, max=15)
     private String username;
-
-    @Size(min = 5, message = "minimum 5 symbols")
+    @Size(min=8, max= 15)
     private String password;
 
     private boolean enabled;
 
     @Id
-    @Column(name = "username", nullable = false, length = 45)
+    @Column(name = "username", nullable = false, length = 50)
     public String getUsername() {
         return username;
     }
@@ -26,7 +27,7 @@ public class Users {
     }
 
     @Basic
-    @Column(name = "password", nullable = false, length = 45)
+    @Column(name = "password", nullable = false, length = 50)
     public String getPassword() {
         return password;
     }
@@ -63,7 +64,7 @@ public class Users {
 //    public int hashCode() {
 //        int result = username != null ? username.hashCode() : 0;
 //        result = 31 * result + (password != null ? password.hashCode() : 0);
-//        result = 31 * result + () enabled;
+//        result = 31 * result + (int) enabled;
 //        return result;
 //    }
 }

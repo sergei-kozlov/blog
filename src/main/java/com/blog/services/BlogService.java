@@ -9,6 +9,8 @@ import java.util.List;
 
 public interface BlogService {
 
+
+
     List<Articles> getAll() throws DataAccessException;
 
     List<Articles> findByTitle(String title) throws DataAccessException;
@@ -19,5 +21,24 @@ public interface BlogService {
     void saveUser(Users users) throws DataAccessException;
 
     void saveArticle(Articles articles) throws DataAccessException;
+
+//    List<Articles> getById(int id) throws DataAccessException;
+//
+//    List<Articles> getAllArticles() throws DataAccessException;
+//
+//    void saveArticle(Articles articles) throws DataAccessException;
+//
+////    void removeArticle(Integer id) throws DataAccessException;
+//
+//
+//    List<Users> getAllUsers() throws DataAccessException;
+//
+//    void saveUser(Users users) throws DataAccessException;
+//
+//    void removeUser(Users users) throws DataAccessException;
+//
+
+
+
 
 }
