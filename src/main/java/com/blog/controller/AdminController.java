@@ -26,7 +26,7 @@ public class AdminController {
         this.blogService = blogService;
     }
 
-    @RequestMapping(value = "/adminpage", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/adminpage", method = RequestMethod.GET)
     public String homePage(Model model, Users users) {
 
         model.addAttribute("usersList", blogService.getAllUsers());
@@ -44,7 +44,7 @@ public class AdminController {
     }
 
 
-    @RequestMapping(value = "/amdminpage/add", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/amdminpage/add", method = RequestMethod.POST)
     public String processCreationUser(@Valid Users users, BindingResult result) {
 
         users.setEnabled(true);

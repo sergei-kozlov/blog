@@ -1,14 +1,10 @@
 package com.blog.model;
 
-import org.codehaus.jackson.annotate.JsonAutoDetect;
-import org.codehaus.jackson.map.annotate.JacksonStdImpl;
-
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 
 @Entity
-@JsonAutoDetect
 @Table(name = "users")
 
 public class Users {
