@@ -17,11 +17,11 @@
     <table>
         <tr>
             <td><form:label path="username">Username</form:label></td>
-            <td><form:input path="username" /></td>
+            <td><form:input path="username" /><form:errors path="username" cssClass="error"/></td>
         </tr>
         <tr>
             <td><form:label path="password">Password</form:label></td>
-            <td><form:input path="password" /></td>
+            <td><form:input path="password" /><form:errors path="password" cssClass="error"/></td>
         </tr>
         <tr><br>
             <td colspan="2"><form:button type="submit" name="action">New user</form:button></td>
@@ -29,8 +29,6 @@
     </table>
 
 </form:form>
-
-
 
 <h3>All users</h3>
 <c:if test="${!empty usersList}">
