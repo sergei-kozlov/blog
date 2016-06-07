@@ -1,55 +1,40 @@
-CREATE DATABASE `blog` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
 CREATE TABLE articles
 (
     id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    title VARCHAR(45) NOT NULL COMMENT 'Заголовок статьи',
-    text TEXT NOT NULL COMMENT 'Текст статьи',
-    date TIMESTAMP DEFAULT 'CURRENT_TIMESTAMP' NOT NULL COMMENT 'Дата добавления статьи.'
+    title VARCHAR(45) NOT NULL,
+    text TEXT NOT NULL,
+    date DATE
 );
-CREATE UNIQUE INDEX title_UNIQUE ON articles (title);
-CREATE TABLE contacts
+CREATE TABLE group_authorities
 (
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    login VARCHAR(45) NOT NULL,
-    name VARCHAR(45) NOT NULL,
-    value VARCHAR(60) NOT NULL,
-    CONSTRAINT FK_Login_Contacts FOREIGN KEY (login) REFERENCES users (login)
+    group_id BIGINT(20) NOT NULL,
+    authority VARCHAR(50) NOT NULL,
+    CONSTRAINT fk_group_authorities_group FOREIGN KEY (group_id) REFERENCES groups (id)
 );
-CREATE INDEX FK_Login_Contacts ON contacts (login);
-CREATE UNIQUE INDEX value_UNIQUE ON contacts (value);
-CREATE TABLE groupuser
+CREATE INDEX fk_group_authorities_group ON group_authorities (group_id);
+CREATE TABLE group_members
 (
-    name VARCHAR(20) PRIMARY KEY NOT NULL COMMENT 'Наименование группы',
-    users_login VARCHAR(15) NOT NULL COMMENT 'Вторичный ключ от таблицы users',
-    CONSTRAINT fk_groupuser_users FOREIGN KEY (users_login) REFERENCES users (login)
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL,
+    group_id BIGINT(20) NOT NULL,
+    CONSTRAINT fk_group_members_group FOREIGN KEY (group_id) REFERENCES groups (id)
 );
-CREATE INDEX fk_groupuser_users ON groupuser (users_login);
-CREATE TABLE groupuser_has_articles
+CREATE INDEX fk_group_members_group ON group_members (group_id);
+CREATE TABLE groups
 (
-    groupuser_name VARCHAR(20) NOT NULL,
-    articles_id INT(11) NOT NULL,
-    CONSTRAINT `PRIMARY` PRIMARY KEY (groupuser_name, articles_id),
-    CONSTRAINT fk_groupuser_has_articles_articles1 FOREIGN KEY (articles_id) REFERENCES articles (id),
-    CONSTRAINT fk_groupuser_has_articles_groupuser1 FOREIGN KEY (groupuser_name) REFERENCES groupuser (name)
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    group_name VARCHAR(50) NOT NULL
 );
-CREATE INDEX fk_groupuser_has_articles_articles1 ON groupuser_has_articles (articles_id);
-CREATE INDEX fk_groupuser_has_articles_groupuser1 ON groupuser_has_articles (groupuser_name);
-CREATE TABLE messages
+CREATE TABLE persistent_logins
 (
-    id INT(11) PRIMARY KEY NOT NULL,
-    text VARCHAR(255) NOT NULL COMMENT 'Текст сообщения',
-    date TIMESTAMP DEFAULT 'CURRENT_TIMESTAMP' NOT NULL COMMENT 'Дата мессаги',
-    users_login VARCHAR(15) NOT NULL COMMENT 'Юзер пославший мессагу',
-    articles_id INT(11) NOT NULL COMMENT 'Статье к которой послан комент',
-    CONSTRAINT fk_messages_articles1 FOREIGN KEY (articles_id) REFERENCES articles (id),
-    CONSTRAINT fk_messages_users1 FOREIGN KEY (users_login) REFERENCES users (login)
+    username VARCHAR(64) NOT NULL,
+    series VARCHAR(64) PRIMARY KEY NOT NULL,
+    token VARCHAR(64) NOT NULL,
+    last_used TIMESTAMP DEFAULT 'CURRENT_TIMESTAMP' NOT NULL
 );
-CREATE INDEX fk_messages_articles1 ON messages (articles_id);
-CREATE INDEX fk_messages_users1 ON messages (users_login);
 CREATE TABLE users
 (
-    login VARCHAR(15) PRIMARY KEY NOT NULL COMMENT 'Логин',
-    pass VARCHAR(45) NOT NULL COMMENT 'Пароль',
-    email VARCHAR(45) NOT NULL
+    username VARCHAR(50) PRIMARY KEY NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    enabled TINYINT(1) NOT NULL
 );

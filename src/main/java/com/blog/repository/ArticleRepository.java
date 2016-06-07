@@ -1,7 +1,6 @@
 package com.blog.repository;
 
 import com.blog.model.Articles;
-import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
