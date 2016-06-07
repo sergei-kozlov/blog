@@ -25,5 +25,4 @@ public interface BlogService {
 
     void removeUser(String username) throws DataAccessException;
 
-
 }

@@ -66,6 +66,5 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public void removeUser(String username) throws DataAccessException {
         this.usersRepository.delete(username);
-
     }
 }

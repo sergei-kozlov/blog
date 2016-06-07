@@ -60,5 +60,4 @@ public class Users {
 
         return true;
     }
-
 }
