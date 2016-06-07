@@ -48,8 +48,10 @@ public class AdminController {
     public String processCreationUser(@Valid Users users, BindingResult result) {
 
         users.setEnabled(true);
+
         if (result.hasErrors()) {
-            return "redirect:/adminpage";
+            return ("redirect:/adminpage");
+
         } else {
             blogService.saveUser(users);
             return "redirect:/adminpage";

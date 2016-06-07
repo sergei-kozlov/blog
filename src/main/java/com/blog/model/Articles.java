@@ -12,10 +12,10 @@ import java.sql.Date;
 public class Articles {
     private int id;
 
-    @NotEmpty
+    @NotEmpty(message = "{article.notempty}")
     private String title;
 
-    @NotEmpty
+    @NotEmpty(message = "{article.notempty}")
     private String text;
 
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")

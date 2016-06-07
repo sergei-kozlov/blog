@@ -1,15 +1,22 @@
 package com.blog.model;
 
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.map.annotate.JacksonStdImpl;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 
 @Entity
+@JsonAutoDetect
 @Table(name = "users")
+
 public class Users {
-    @Size(min=6, max=15)
+
+    @Size(min = 6, message = "{name.size.error}")
     private String username;
-    @Size(min=8, max= 15)
+
+    @Size(min = 5, max = 10, message = "{password.size.error}")
     private String password;
 
     private boolean enabled;

@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="<c:url value='/resources/css/style.css'/>" rel="stylesheet">
-    <title>Главная страница блога</title>
+    <title>Article page</title>
 </head>
 <body>
 <header>
@@ -13,8 +13,7 @@
     <div id="user-panel">
 
         <a href="/registration"><spring:message code="registration.h1"/> </a>
-        <a href="/addarticle">Добавить новою статью</a>
-
+        <a href="/addarticle"><spring:message code="registration.add"/></a>
 
     </div>
 </header>

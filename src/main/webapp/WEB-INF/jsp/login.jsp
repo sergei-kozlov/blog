@@ -27,11 +27,6 @@
             <form name="frm" action="<c:url value='login'/>" method="post">
 
 
-            <%--<form method="POST"--%>
-                  <%--action="<%=request.getContextPath()%>/j_spring_security_check"--%>
-                  <%--class="box login">--%>
-
-
                 <fieldset class="boxBody">
                     <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
 
@@ -46,14 +41,7 @@
 
                 <label>Remember me</label><input type="checkbox" name="remember-me-parameter">
 
-
-
-
-                <%--<input type="checkbox" class="checkAdmin" />--%>
-
-                <%--<label for="remember_me">Запомнить</label>--%>
-
-                <input type="submit" value="Sign In">
+                <input type="submit" value="Login">
 
             </form>
 

@@ -8,20 +8,18 @@
 
 <jsp:include page="fragments/header.jsp"/>
 
-
-
 <div id="main">
     <section>
         <form:form method="POST" commandName="articles" action="/article/add">
             <div class="text-article">
 
                 <p>
-                    <form:label path="title">Заголовок статьи</form:label>
+                    <form:label path="title"><spring:message code="addarticle.title"/></form:label>
                     <form:textarea path="title"/>
                     <form:errors path="title" cssClass="error"/>
                 </p>
                 <p>
-                    <form:label path="text">Текст статьи</form:label>
+                    <form:label path="text"><spring:message code="addarticle.text"/></form:label>
                     <form:textarea path="text" />
                     <form:errors path="text" cssClass="error"/>
                 </p>
@@ -33,8 +31,6 @@
                 </p>
             </div>
         </form:form>
-
-
 
     </section>
 

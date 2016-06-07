@@ -3,16 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-
 <jsp:include page="fragments/header.jsp"/>
-
-
 
 <div id="main">
     <section>
         <c:forEach var="article" items="${text}">
             <article>
-
 
                 <h1>${article.title}</h1>
 

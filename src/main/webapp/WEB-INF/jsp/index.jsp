@@ -6,8 +6,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
 
-
-
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -21,12 +19,8 @@
 
         <a href="?lang=ru">Ru</a>
         <a href="?lang=en">En</a>
-
-        <a href="/adminpage">Зона Аднимистрирования</a>
-
-        <%--<a href="/registration"><spring:message code="index.registration"/> </a>--%>
-
-        <a href="/login">Авторизация</a>
+        <a href="/adminpage"><spring:message code="index.admin"/></a>
+        <a href="/login"><spring:message code="index.login"/></a>
 
     </div>
 </header>

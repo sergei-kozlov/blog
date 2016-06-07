@@ -1,5 +1,6 @@
 package com.blog.controller;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -19,7 +20,8 @@ public class AuthorizationController {
 
         ModelAndView model = new ModelAndView();
         if (error != null) {
-            model.addObject("error", "Sorry! Invalid username or password!");
+
+            model.addObject("error", "Login is not correctly! Try again");
         }
 
         model.setViewName("login");
