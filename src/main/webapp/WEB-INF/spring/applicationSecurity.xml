@@ -12,20 +12,11 @@
     <beans:import resource="datasource-config.xml"/>
 
     <http pattern="/index" security="none"/>
-    <!--<http pattern="/css/**" security="none" />-->
+    <http pattern="/css/**" security="none" />
 
-
-    <http auto-config="true" use-expressions="true">
+    <http use-expressions="true">
 
         <access-denied-handler error-page="/WEB-INF/jsp/accessDenied.jsp"/>
-
-       <!---->
-            <!--<intercept-url pattern="/secure/**" access="ROLE_USER" />-->
-            <!--<intercept-url pattern="/admin/**" access="ROLE_ADMIN" />-->
-            <!--<intercept-url pattern="/login.jsp*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>-->
-            <!--<form-login login-page="/signin"-->
-                        <!--authentication-failure-url="/signin-failure" default-target-url="/" always-use-default-target="true" />-->
-    <!---->
 
         <intercept-url pattern="/article" access="isAuthenticated()"/>
         <intercept-url pattern="/addarticle" access="isAuthenticated()"/>
