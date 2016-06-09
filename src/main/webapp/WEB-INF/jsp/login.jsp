@@ -26,22 +26,26 @@
 
             <form name="frm" action="<c:url value='login'/>" method="post">
 
-
                 <fieldset class="boxBody">
-                    <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-                    <label> Username </label> <input type='text' name='user_login' value=''>
+                    <label> Username </label> <input type='text' name='user_login'>
 
-                    <label> Password </label> <input type='password' name='password_login' />
+                    <label> Password </label> <input type='password' name='password_login'/>
 
                     <c:if test="${not empty error}">
                         <div class="error" style="text-align: right;">${error}</div>
                     </c:if>
                 </fieldset>
 
-                <label>Remember me</label><input type="checkbox" name="remember-me-parameter">
+                <fieldset>
 
-                <input type="submit" value="Login">
+                    <label>Remember me</label><input type="checkbox" name="remember-me-parameter">
+                </fieldset>
+                <fieldset>
+
+                    <input type="submit" value="Login">
+                </fieldset>
 
             </form>
 

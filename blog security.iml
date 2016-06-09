@@ -103,5 +103,9 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: log4j:log4j:1.2.15" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat:tomcat-jasper-el:8.5.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat:tomcat-el-api:8.5.2" level="project" />
+    <orderEntry type="library" name="Maven: cglib:cglib:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm:5.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.ant:ant:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.ant:ant-launcher:1.9.6" level="project" />
   </component>
 </module>

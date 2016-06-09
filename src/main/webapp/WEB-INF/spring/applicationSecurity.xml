@@ -12,35 +12,43 @@
     <beans:import resource="datasource-config.xml"/>
 
     <http pattern="/index" security="none"/>
+    <!--<http pattern="/css/**" security="none" />-->
+
 
     <http auto-config="true" use-expressions="true">
 
         <access-denied-handler error-page="/WEB-INF/jsp/accessDenied.jsp"/>
 
+       <!---->
+            <!--<intercept-url pattern="/secure/**" access="ROLE_USER" />-->
+            <!--<intercept-url pattern="/admin/**" access="ROLE_ADMIN" />-->
+            <!--<intercept-url pattern="/login.jsp*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>-->
+            <!--<form-login login-page="/signin"-->
+                        <!--authentication-failure-url="/signin-failure" default-target-url="/" always-use-default-target="true" />-->
+    <!---->
+
         <intercept-url pattern="/article" access="isAuthenticated()"/>
-        <intercept-url pattern="/adminpage" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/addarticle" access="isAuthenticated()"/>
+        <intercept-url pattern="/adminpage" access="hasRole('ROLE_ADMIN')"/>
 
+        <form-login login-page="/login"
 
-        <logout invalidate-session="true"
-                logout-success-url="/"
-                logout-url="/logout/"
-                delete-cookies="JSESSIONID" />
-
-        <form-login login-page='/login' authentication-failure-url="/login?error=true"
+                    authentication-failure-url="/login?error=true"
+                    password-parameter="password_login"
                     username-parameter="user_login"
-                    password-parameter="password_login"/>
-        <logout logout-success-url="/login"/>
+                    default-target-url="/index"
+                    always-use-default-target="true"/>
+
+        <logout logout-success-url="/index.jsp"
+                logout-url="/logout"
+                delete-cookies="JSESSIONID"/>
 
         <!--For storage in cookie-->
-
         <remember-me remember-me-parameter="remember-me-parameter" remember-me-cookie="SPRING_SECURITY_COOKIE"/>
 
         <!--For storage in Data Base-->
         <!--<remember-me data-source-ref="dataSource" remember-me-parameter="remember-me-parameter" />-->
-        <http-basic />
     </http>
-
 
     <beans:bean id="jdbcGroupsImpl" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
         <beans:property name="enableGroups" value="true"/>

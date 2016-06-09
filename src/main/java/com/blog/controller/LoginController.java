@@ -1,6 +1,5 @@
 package com.blog.controller;
 
-import org.hibernate.validator.constraints.NotEmpty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -11,12 +10,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-public class AuthorizationController {
+public class LoginController {
 
-    private static final Logger logger = LoggerFactory.getLogger(AuthorizationController.class);
+    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login(@RequestParam(value = "error", required = false) String error) {
+
+        logger.info(error);
 
         ModelAndView model = new ModelAndView();
         if (error != null) {

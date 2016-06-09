@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LogoutController {
 
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    @RequestMapping(value = "/logout/user", method = RequestMethod.GET)
+
     public String secure() {
-        return "index";
+        return "redirect:/index";
     }
 
 }
