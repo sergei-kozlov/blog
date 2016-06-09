@@ -36,7 +36,7 @@ public class AddArticleController {
     @RequestMapping(value = "/article/add", method = RequestMethod.POST)
     public String processCreationUser(@Valid Articles articles, BindingResult result) {
 
-//        Automatically set date created article
+//        Automatically set date when created article
 
         LocalDate localDate = new LocalDate();
 

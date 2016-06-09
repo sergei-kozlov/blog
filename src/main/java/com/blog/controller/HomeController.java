@@ -9,12 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 @Controller
 public class HomeController {
 
     private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-
 
     private BlogService blogService;
 
@@ -22,7 +20,6 @@ public class HomeController {
     public HomeController(BlogService blogService) {
         this.blogService = blogService;
     }
-
 
     @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
     public String homePage(Model model) {

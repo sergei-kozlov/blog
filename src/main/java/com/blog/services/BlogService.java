@@ -18,7 +18,6 @@ public interface BlogService {
     void removeArticle(Integer id) throws DataAccessException;
 
 
-
     List<Users> getAllUsers() throws DataAccessException;
 
     void saveUser(Users users) throws DataAccessException;
