@@ -17,7 +17,7 @@
         <intercept-url pattern="/adminpage" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/index" access="isAuthenticated()"/>
         <intercept-url pattern="/addarticle" access="isAuthenticated()"/>
-        <logout logout-url="/logout"/>
+        <logout logout-url="/logout" delete-cookies="SPRING_SECURITY_COOKIE" logout-success-url="/WEB-INF/jsp/index.jsp"/>
 
         <form-login login-page='/login' authentication-failure-url="/login?error=true"
                     username-parameter="user_login"
