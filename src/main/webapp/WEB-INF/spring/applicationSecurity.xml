@@ -32,7 +32,7 @@
 
         <logout logout-success-url="/index.jsp"
                 logout-url="/logout"
-                delete-cookies="JSESSIONID"/>
+                delete-cookies="JSESSIONID, SPRING_SECURITY_COOKIE"/>
 
         <!--For storage in cookie-->
         <remember-me remember-me-parameter="remember-me-parameter" remember-me-cookie="SPRING_SECURITY_COOKIE"/>
