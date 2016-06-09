@@ -4,8 +4,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-
-
 <html>
 <head>
     <title>Admin page</title>
@@ -69,10 +67,9 @@
 </c:if>
 
 <footer>
-    <form action="/logout" method="post">
+    <form action="/logout">
         <input type="submit" value="Logout" />
     </form>
-
 </footer>
 
 </body>

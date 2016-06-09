@@ -30,7 +30,6 @@
 
         <h2><spring:message code="index.head"/></h2>
 
-
         <c:forEach var="articles" items="${articlesList}" begin="0" end="5">
             <ul>
                 <li>

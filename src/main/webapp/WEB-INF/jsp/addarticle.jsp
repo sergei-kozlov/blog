@@ -23,7 +23,6 @@
                     <form:errors path="text" cssClass="error"/>
                 </p>
 
-
                 <p>
                     <form:button type="submit" name="action"><spring:message code="registration.reg"/>
                     </form:button>
