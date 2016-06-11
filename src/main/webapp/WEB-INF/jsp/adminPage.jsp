@@ -10,27 +10,31 @@
 </head>
 <body>
 
-<h2>Page for administrator</h2>
+<h1>Page for administrator</h1>
 
+<h3>All new user</h3>
+<fieldset>
 <form:form method="POST" commandName="users" action="/amdminpage/add">
-
     <table>
         <tr>
             <td><form:label path="username">Username</form:label></td>
-            <td><form:input path="username" /><form:errors path="username" cssClass="error"/></td>
+            <td><form:input path="username" /></td>
+            <td><form:errors path="username" cssClass="error"/></td>
         </tr>
         <tr>
             <td><form:label path="password">Password</form:label></td>
-            <td><form:input path="password" /><form:errors path="password" cssClass="error"/></td>
+            <td><form:input path="password" /></td>
+            <td><form:errors path="password" cssClass="error"/></td>
         </tr>
         <tr><br>
             <td colspan="2"><form:button type="submit" name="action">New user</form:button></td>
         </tr>
     </table>
-
 </form:form>
+</fieldset>
 
 <h3>All users</h3>
+<fieldset>
 <c:if test="${!empty usersList}">
     <table class="data">
         <tr>
@@ -44,14 +48,15 @@
                 <td>${user.password}</td>
                 <td>${user.enabled}</td>
 
-
                 <td><a href="del/${user.username}">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
 </c:if>
+</fieldset>
 
 <h3>All articles</h3>
+<fieldset>
 <c:if test="${!empty articleList}">
     <table class="data">
         <tr>
@@ -65,6 +70,7 @@
         </c:forEach>
     </table>
 </c:if>
+</fieldset>
 
 <footer>
     <form action="/logout">
