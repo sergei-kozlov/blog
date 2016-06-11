@@ -28,9 +28,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="blog" target="1.5" />
-      <module name="blog security" target="1.6" />
-      <module name="eblog" target="1.5" />
+      <module name="blog" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
