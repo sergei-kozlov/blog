@@ -25,12 +25,10 @@ public class AddArticleController {
     @Autowired
     private BlogService blogService;
 
-
     @InitBinder
     public void setAllowedFields(WebDataBinder dataBinder) {
         dataBinder.setDisallowedFields("id");
     }
-
 
     @RequestMapping(value = "/addarticle", method = RequestMethod.GET)
     public String initCreationUser(Map<String, Object> model) {
