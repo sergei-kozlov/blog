@@ -6,13 +6,12 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
-
 public class Users {
 
     @Size(min = 6, message = "{name.size.error}")
     private String username;
 
-    @Size(min = 5, max = 10, message = "{password.size.error}")
+    @Size(min = 5, max =10, message = "{password.size.error}")
     private String password;
 
     private boolean enabled;

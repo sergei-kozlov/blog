@@ -24,12 +24,11 @@
                 </p>
 
                 <p>
-                    <form:button type="submit" name="action"><spring:message code="registration.reg"/>
+                    <form:button type="submit" name="action"><spring:message code="addarticle.add"/>
                     </form:button>
                 </p>
             </div>
         </form:form>
-
     </section>
 
 </div>

@@ -10,6 +10,7 @@ import java.sql.Date;
 @Entity
 @Table(name = "articles")
 public class Articles {
+
     private int id;
 
     @NotEmpty(message = "{article.notempty}")
