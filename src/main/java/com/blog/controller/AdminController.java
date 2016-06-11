@@ -50,7 +50,7 @@ public class AdminController {
         users.setEnabled(true);
 
         if (result.hasErrors()) {
-            return ("redirect:/adminpage");
+            return ("adminpage");
 
         } else {
             blogService.saveUser(users);
