@@ -10,6 +10,8 @@ import java.sql.Date;
 @Entity
 @Table(name = "articles")
 public class Articles {
+    public Articles() {
+    }
 
     private int id;
 

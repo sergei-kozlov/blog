@@ -26,13 +26,13 @@ public class AdminController {
         this.blogService = blogService;
     }
 
-    @RequestMapping(value = "/adminpage", method = RequestMethod.GET)
+    @RequestMapping(value = "/adminPage", method = RequestMethod.GET)
     public String homePage(Model model, Users users) {
 
         model.addAttribute("usersList", blogService.getAllUsers());
         model.addAttribute("articleList", blogService.getAllArticles());
 
-        return "adminpage";
+        return "adminPage";
     }
 
 

@@ -9,6 +9,8 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "users")
 public class Users {
+    public Users() {
+    }
 
     @Size(min = 6, message = "{name.size.error}")
     private String username;
