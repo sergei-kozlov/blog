@@ -14,7 +14,7 @@
 
 <h3>All new user</h3>
 <fieldset>
-<form:form method="POST" commandName="users" action="/amdminpage/add">
+<form:form method="POST" commandName="users" action="/adminpage/add">
     <table>
         <tr>
             <td><form:label path="username">Username</form:label></td>
