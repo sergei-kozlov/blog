@@ -12,7 +12,7 @@
     <beans:import resource="datasource-config.xml"/>
 
     <http pattern="/index" security="none"/>
-    <http pattern="/css/**" security="none" />
+    <http pattern="/css/**" security="none"/>
 
     <http use-expressions="true">
 

@@ -1,7 +1,5 @@
 package com.blog.model;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
@@ -15,7 +13,7 @@ public class Users {
     @Size(min = 6, message = "{name.size.error}")
     private String username;
 
-    @Size(min = 5, max =10, message = "{password.size.error}")
+    @Size(min = 5, max = 10, message = "{password.size.error}")
     private String password;
 
     private boolean enabled;
