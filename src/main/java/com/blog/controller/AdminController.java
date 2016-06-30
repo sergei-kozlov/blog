@@ -26,13 +26,13 @@ public class AdminController {
         this.blogService = blogService;
     }
 
-    @RequestMapping(value = "/adminPage", method = RequestMethod.GET)
+    @RequestMapping(value = "/adminpage", method = RequestMethod.GET)
     public String homePage(Model model, Users users) {
 
         model.addAttribute("usersList", blogService.getAllUsers());
         model.addAttribute("articleList", blogService.getAllArticles());
 
-        return "adminPage";
+        return "adminpage";
     }
 
 
@@ -44,7 +44,7 @@ public class AdminController {
     }
 
 
-    @RequestMapping(value = "/amdminpage/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/adminpage/add", method = RequestMethod.POST)
     public String processCreationUser(@Valid Users users, BindingResult result) {
 
         users.setEnabled(true);

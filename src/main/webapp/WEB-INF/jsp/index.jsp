@@ -20,7 +20,7 @@
 
         <a href="?lang=ru">Ru</a>
         <a href="?lang=en">En</a>
-        <a href="/adminPage"><spring:message code="index.admin"/></a>
+        <a href="/adminpage"><spring:message code="index.admin"/></a>
         <a href="/login"><spring:message code="index.login"/></a>
 
     </div>
