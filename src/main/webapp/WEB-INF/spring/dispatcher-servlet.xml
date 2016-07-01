@@ -46,7 +46,7 @@
         <property name="jpaProperties">
             <props>
                 <prop key="hibernate.dialect">
-                    org.hibernate.dialect.MySQL5Dialect
+                    org.hibernate.dialect.MySQLDialect
                 </prop>
                 <prop key="hibernate.max_fetch_depth">3</prop>
                 <prop key="hibernate.jdbc.fetch_size">50</prop>
