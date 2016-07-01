@@ -10,7 +10,9 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
     <import resource="datasource-config.xml"/>
+
     <!--Activates various annotations to be detected in bean classes: Spring's @Required and @Autowired and so on-->
     <mvc:annotation-driven/>
 
@@ -63,7 +65,6 @@
     <!-- Need for Repository abstraction -->
     <jpa:repositories base-package="com.blog.repository" entity-manager-factory-ref="emf"
                       transaction-manager-ref="transactionManager"/>
-
 
     <!--Scanning components for i18n and l10n-->
 
